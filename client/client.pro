@@ -10,30 +10,45 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    aboutsplit.cpp \
+    addclient.cpp \
+    addsplit.cpp \
     authwindow.cpp \
     controltable.cpp \
     eventadd.cpp \
     functions_for_client.cpp \
     main.cpp \
     mainwindow.cpp \
+    posts.cpp \
+    rent.cpp \
     servicetable.cpp \
     split.cpp
 
 HEADERS += \
+    aboutsplit.h \
+    addclient.h \
+    addsplit.h \
     authwindow.h \
     client.h \
     controltable.h \
     eventadd.h \
     functions_for_client.h \
     mainwindow.h \
+    posts.h \
+    rent.h \
     servicetable.h \
     split.h
 
 FORMS += \
+    aboutsplit.ui \
+    addclient.ui \
+    addsplit.ui \
     authwindow.ui \
     controltable.ui \
     eventadd.ui \
     mainwindow.ui \
+    posts.ui \
+    rent.ui \
     servicetable.ui \
     split.ui
 

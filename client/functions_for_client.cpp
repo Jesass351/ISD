@@ -46,7 +46,7 @@ QString getAll(){
 
 
 QString addEvent(QString id, QString time, QString weather, QString duration, QString  conf , QString type, QString  split , QString control, QString service){
-    QString res = "addEvent&" + id + "&" + time  + "&" + weather + "&" + duration + "&" + conf + "&" + type + "&" + split + "&" + control + "&" + service + "&";
+    QString res = "addEvent&" + id +"&"+time  + "&" + weather + "&" + duration + "&" + conf + "&" + type + "&" + split + "&" + control + "&" + service + "&";
     return Client::send_request_to_server(res);
 }
 
@@ -62,5 +62,25 @@ QString getControl(){
 QString getSplits()
 {
     QString res = "getSplits&";
+    return Client::send_request_to_server(res);
+}
+
+QString getSplitInfo(QString num){
+    QString res = "getSplitInfo&" + num + "&";
+    return Client::send_request_to_server(res);
+}
+
+QString getClientCount(QString num){
+    QString res = "getCountClient&" + num + "&";
+    return Client::send_request_to_server(res);
+}
+
+QString addClient(QString a, QString b, QString c, QString rent, QString license, QString split){
+    QString res = "addClient&" + a+ "&" + b +"&"+"&" + c +"&" + rent + "&" + license + "&" + split + "&";
+    return Client::send_request_to_server(res);
+}
+
+QString addSplitS(QString name){
+    QString res = "addSplit&" + name+ "&";
     return Client::send_request_to_server(res);
 }

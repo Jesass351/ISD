@@ -4,6 +4,7 @@
 #include <QTableWidget>
 #include "servicetable.h"
 #include "controltable.h"
+#include "split.h"
 
 eventAdd::eventAdd(QWidget *parent) :
     QDialog(parent),
@@ -53,5 +54,13 @@ void eventAdd::on_pushButton_4_clicked()
     controltable table;
     table.setModal(true);
     table.exec();
+}
+
+
+void eventAdd::on_pushButton_5_clicked()
+{
+    split split;
+    split.setModal(true);
+    split.exec();
 }
 

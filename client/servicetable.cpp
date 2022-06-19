@@ -2,20 +2,33 @@
 #include "ui_servicetable.h"
 #include <qdebug.h>
 #include "functions_for_client.h"
-
+#include "posts.h"
 serviceTable::serviceTable(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::serviceTable)
 {
     ui->setupUi(this);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    QString dataFromServer = getService();
+    addtoTable(getService());
+}
+
+serviceTable::~serviceTable()
+{
+    delete ui;
+}
+
+void serviceTable::on_pushButton_clicked()
+{
+    close();
+}
+void serviceTable::addtoTable(QString data){
+
     ui->tableWidget->clearContents();
     for ( int i = 0; i < ui->tableWidget->rowCount(); ++i )
     {
         ui->tableWidget->removeRow(i);
     }
-    QStringList bigRecord = dataFromServer.split(QLatin1Char('}'));
+    QStringList bigRecord = data.split(QLatin1Char('}'));
     for (int i = 0; i<bigRecord.length(); i++){
         ui->tableWidget->setRowCount(ui->tableWidget->rowCount()+1);
         QStringList oneRecord = bigRecord[i].split("|");
@@ -29,13 +42,18 @@ serviceTable::serviceTable(QWidget *parent) :
         }
 }
 
-serviceTable::~serviceTable()
+void serviceTable::on_pushButton_2_clicked()
 {
-    delete ui;
+     Client::send_request_to_server("addService&"+ui->fam->text() +"&"+ui->name->text() +"&"+ui->otch->text() +"&"+ui->post->text() +"&" + ui->place->text()+"&");
+     addtoTable(getService());
 }
 
-void serviceTable::on_pushButton_clicked()
+
+void serviceTable::on_pushButton_3_clicked()
 {
-    close();
+    dataP = Client::send_request_to_server("getPostsSer&1&");
+    posts table;
+    table.setModal(true);
+    table.exec();
 }
 

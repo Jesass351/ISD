@@ -14,9 +14,19 @@ class split : public QDialog
 public:
     explicit split(QWidget *parent = nullptr);
     ~split();
-
+    inline static QString splitNum;
+    static QString getSplitNum(){
+        return splitNum;
+    }
 private slots:
     void on_refresh_clicked();
+
+    void on_detailed_clicked();
+
+
+    void on_addPilot_clicked();
+
+    void on_addSplit_clicked();
 
 private:
     Ui::split *ui;

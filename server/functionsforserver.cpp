@@ -41,8 +41,27 @@ QByteArray parsing(QString data_from_client){
         return getControl();}
     else if (nameOfFunc == "getSplits"){
         return DataBase::getSplits();}
-else
-
+    else if (nameOfFunc == "addControl"){
+        return DataBase::addControl(data_from_client_list.at(0),data_from_client_list.at(1),data_from_client_list.at(2),data_from_client_list.at(3)) ;}
+    else if (nameOfFunc == "addService"){
+        return DataBase::addService(data_from_client_list.at(0),data_from_client_list.at(1),data_from_client_list.at(2),data_from_client_list.at(3),data_from_client_list.at(4));}
+    else if (nameOfFunc == "getSplitInfo"){
+        return DataBase::getSplitInfo(data_from_client_list.at(0));}
+    else if (nameOfFunc == "getCountClient"){
+        return DataBase::getCountClient(data_from_client_list.at(0));}
+    else if (nameOfFunc == "addClient"){
+        return DataBase::addClient(data_from_client_list.at(0),data_from_client_list.at(1),data_from_client_list.at(2), data_from_client_list.at(3), data_from_client_list.at(4),data_from_client_list.at(5));}
+    else if (nameOfFunc == "addSplit"){
+        return DataBase::addSplit(data_from_client_list.at(0));}
+    else if (nameOfFunc == "addRent"){
+        return DataBase::addRent(data_from_client_list.at(0));}
+    else if (nameOfFunc == "getPostsSer"){
+        return DataBase::getPostsSer(data_from_client_list.at(0));}
+    else if (nameOfFunc == "getPostsContr"){
+        return DataBase::getPostsCont(data_from_client_list.at(0));}
+    else if (nameOfFunc == "getLicense"){
+        return DataBase::getLicense();}
+    else
         return "error";
 
 }
@@ -82,7 +101,7 @@ QByteArray all(){
     return result;
 }
 
-QByteArray addEvent(QString id, QString date, QString weather, QString duration, QString conf, QString type, QString split, QString control, QString service)
+QByteArray addEvent(QString id,QString date, QString weather, QString duration, QString conf, QString type, QString split, QString control, QString service)
 {
     QByteArray result;
     result.append(DataBase::addEvent(id,date, weather,  duration,  conf,  type,  split,  control,  service));

@@ -38,16 +38,6 @@
    </column>
    <column>
     <property name="text">
-     <string>Количество пилотов</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Лицензия</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
      <string>Название сплита</string>
     </property>
    </column>
@@ -78,32 +68,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>191</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <widget class="QLineEdit" name="splitID">
-      <property name="placeholderText">
-       <string>Номер сплита</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="deleteSplit">
-      <property name="text">
-       <string>Удалить сплит</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QWidget" name="horizontalLayoutWidget_3">
    <property name="geometry">
     <rect>
@@ -115,7 +79,7 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_3">
     <item>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="splitNum">
       <property name="placeholderText">
        <string>Номер сплита</string>
       </property>

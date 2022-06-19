@@ -1,7 +1,8 @@
 #include "split.h"
 #include "ui_split.h"
 #include "functions_for_client.h"
-
+#include "aboutsplit.h"
+#include "addsplit.h"
 split::split(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::split)
@@ -35,5 +36,30 @@ void split::on_refresh_clicked()
             }
 
         }
+}
+
+
+void split::on_detailed_clicked()
+{
+    splitNum = ui->splitNum->text();
+    AboutSplit about;
+    about.setModal(true);
+    about.exec();
+}
+
+
+
+
+void split::on_addPilot_clicked()
+{
+
+}
+
+
+void split::on_addSplit_clicked()
+{
+    addSplit split;
+    split.setModal(true);
+    split.exec();
 }
 
